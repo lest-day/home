@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Github",
+    "icon": "/images/icon/github.png",
+    "tip": "去 Github 看看，说不定有新东西",
+    "url": "https://github.com/lest-day"
+  },
+  {
+    "name": "BiliBili",
+    "icon": "/images/icon/bilibili.png",
+    "tip": "BiliBili (゜-゜)つロ 干杯 ~",
+    "url": "https://space.bilibili.com/1960746880"
+  },
+  {
+    "name": "QQqun",
+    "icon": "/images/icon/qq.png",
+    "tip": "仅限熟人加群哦~",
+    "url": "http://res.abeim.cn/api-qq.qun?qun=883423270"
+  },
+  {
+    "name": "Email",
+    "icon": "/images/icon/email.png",
+    "tip": "来封 Email 吧~",
+    "url": "mailto:email@lestday233.eu.org"
+  },
+  {
+    "name": "Twitter",
+    "icon": "/images/icon/twitter.png",
+    "tip": "你看过这个东西吗 ~",
+    "url": "https://twitter.com/@lestday233"
+  }
+]
