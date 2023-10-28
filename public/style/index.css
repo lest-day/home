@@ -8,12 +8,12 @@ body {
     padding: 1em;
     margin: 1em;
     background-color: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(5px);
     border: 0.666667px solid rgba(255, 255, 255, 0.18);
     -webkit-box-shadow: rgba(142, 142, 142, 0.19) 0px 6px 15px 0px;
     -webkit-border-radius: 15px;
     color: rgba(255, 255, 255, 0.9);
-    -webkit-backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 /* GRID-CSS */
@@ -39,9 +39,6 @@ body {
 
 .time-block {
     grid-area: timeblock;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .saying-block {
@@ -92,6 +89,15 @@ body {
 .time {
     font-weight: 1000;
     font-size: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* SAYING-BLOCK */
