@@ -19,13 +19,13 @@ body {
 /* GRID-CSS */
 .content-wrap {
     display: grid;
-    grid-template-columns: 25em 30em 20em 8em;
+    grid-template-columns: 25em 30em 24em 8em;
     grid-gap: 2px;
     grid-template-areas:
         "infoblock timeblock sayingblock other"
         "infoblock siteblock siteblock siteblock"
         "metablock siteblock siteblock siteblock";
-    width: 83em;
+    width: 86em;
     margin: auto;
 }
 
@@ -63,17 +63,36 @@ body {
     border: 2px solid #959595;
     border-radius: 52%;
     background: linear-gradient(145deg, #cacaca, #f0f0f0);
-    box-shadow: 17px 17px 34px #bebebe, -17px -17px 34px #ffffff;
-    width: 4em;
+    width: 5em;
+}
+
+.avatar-img:hover {
+    transform: rotate(360deg);
+    transition-delay: 0.2s;
+    transition-duration: 1s;
 }
 
 .account-img {
-    width: 2.8em;
+    width: 2.5em;
+}
+
+.infoname {
+    font-weight: 1000;
+    font-size: 18px;
+}
+
+.profile {
+    font-size: 13px;
 }
 
 /* SAYING-BLOCK */
-#jinrishici-sentence {
+.jinrishici-sentence {
     font-size: 1.5em;
+    font-weight: 1000;
+}
+
+.jinrishici-info {
+    font-size: 1.2em;
 }
 
 /* OTHER-BLOCK */
@@ -83,9 +102,6 @@ body {
 }
 
 .other-item {
-    margin
-    m
-;
     margin: auto;
     padding: 10;
 }
