@@ -16,6 +16,10 @@ body {
     -webkit-backdrop-filter: blur(5px);
 }
 
+hr {
+    border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
 /* GRID-CSS */
 .content-wrap {
     display: grid;
@@ -54,6 +58,12 @@ body {
 }
 
 /* INFO-BLOCK */
+
+.infoblock-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .meta-item {
     display: inline-block;
