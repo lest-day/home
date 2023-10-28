@@ -1,17 +1,65 @@
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>lest-day的个人主页</title>
-        <link rel="shortcut icon" href="https://lestday233.eu.org/public/favicon.ico">
-        <link rel="stylesheet" href="https://lestday233.eu.org/public/style/index.css">
-    </head>
-    <body>
-        <div class="info-block">
-            <img src="https://lestday233.eu.org/public/images/avatar.png" alt="lest-day的头像" class="avatar">
+
+<head>
+    <meta charset="utf-8">
+    <title>lest-day的个人主页</title>
+    <script type="text/javascript" src="public/script/index.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <link rel="shortcut icon" href="public/favicon.ico">
+    <link rel="stylesheet" href="public/style/index.css">
+</head>
+
+<body>
+    <div class="content-wrap">
+        <div class="info-block block">
+            <img src="public/images/avatar.webp" alt="lest-day的头像" class="avatar">
+            <div class="infoname">lest-day</div>
         </div>
-        <div class="time-block">
-            <span id="jinrishici-sentence">正在加载今日诗词....</span>
-            <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        <div class="meta-block block">
+            <div class="meta-item">
+                <a href="https://github.com/lest-day">
+                    <img src="public/images/github.webp" alt="Github" class="account-img"></img>
+                </a>
+            </div>
+            <div class="meta-item">
+                <a href="https://space.bilibili.com/1960746880/">
+                    <img src="public/images/bilibili.webp" alt="BiliBili" class="account-img"></img>
+                </a>
+            </div>
         </div>
-    </body>
+        <div class="time-block block">
+            <span class="time" id="time"></span>
+            <span class="data" id="data"></span>
+        </div>
+        <div class="saying-block block">
+            <div id="jinrishici-sentence">正在加载今日诗词....</div>
+            <div id="jinrishici-info"></div>
+            <script type="text/javascript">
+                jinrishici.load(function (result) {
+                    var sentence = document.querySelector("#jinrishici-sentence")
+                    var info = document.querySelector("#jinrishici-info")
+                    sentence.innerHTML = result.data.content
+                    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+                });
+            </script>
+        </div>
+        <div class="other block">
+            <div class="sound-effects other-item">
+                <i class="fas fa-music" id="sound-effects">
+                </i>
+            </div>
+            <div class="darkadjust other-item">
+                <i class="fas fa-adjust" id="darkadjust">
+                </i>
+            </div>
+            <div class="setting other-item">
+                <i class="fas fa-cog" id="setting">
+                </i>
+            </div>
+        </div>
+        <div class="site-block block">
+        </div>
+    </div>
+</body>
+
 </html>
