@@ -19,10 +19,10 @@ hr {
 }
 .content-wrap {
   display:grid;
-  grid-template-columns:25em 30em 24em 6em;
+  grid-template-columns:34% 32% 26% 8%;
   grid-gap:2px;
   grid-template-areas:"infoblock timeblock sayingblock other    " "infoblock siteblock siteblock   siteblock" "metablock siteblock siteblock   siteblock";
-  width:84em;
+  width:100%;
   margin:auto
 }
 .info-block {
@@ -78,11 +78,11 @@ hr {
 }
 .time {
   font-weight:1000;
-  font-size:3em;
+  font-size:xx-large;
   display:flex;
   justify-content:center;
   align-items:center;
-  width:100%
+  width:100%;
 }
 .data {
   display:flex;
