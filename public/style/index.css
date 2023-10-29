@@ -24,7 +24,7 @@ hr {
 .content-wrap {
 	display: grid;
 	margin: auto;
-	width: 100%;
+	width: 80%;
 	grid-template-columns: 34% 32% 26% 8%;
 	grid-gap: 2px;
 	grid-template-areas: "infoblock timeblock sayingblock other    " "infoblock siteblock siteblock   siteblock" "metablock siteblock siteblock   siteblock";
@@ -36,6 +36,7 @@ hr {
 
 .meta-block {
 	grid-area: metablock;
+	text-align: center;
 }
 
 .time-block {
@@ -48,6 +49,7 @@ hr {
 
 .other {
 	grid-area: other;
+	text-align: center;
 }
 
 .site-block {
@@ -119,17 +121,12 @@ hr {
 	font-size: 1.2em;
 }
 
-.other-item {
-	display: block;
-	margin: auto;
-}
-
 .other-img {
 	padding: .4em 0;
-	width: 100%;
+	width: 2vh;
 }
 
-@media(max-width:415px) {
+@media(max-width:496px) {
 	.content-wrap {
 		display: grid;
 		margin: auto;
@@ -151,5 +148,25 @@ hr {
 
 	.time-block .data {
 		display: none;
+	}
+
+	.meta-item {
+		display: block;
+	}
+}
+
+@media(min-width:496px) and (max-width:875px) {
+	.content-wrap {
+		display: grid;
+		margin: auto;
+		width: 80%;
+		grid-template-columns: 60% 18% 12% 12%;
+		grid-gap: 0;
+		grid-template-areas: "infoblock timeblock   timeblock   other             " "infoblock metablock   metablock   metablock         " "infoblock sayingblock sayingblock sayingblock" "siteblock siteblock   siteblock   siteblock         ";
+	}
+
+	.meta-img,
+	.other-img {
+		width: 1.5vh;
 	}
 }

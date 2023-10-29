@@ -7,7 +7,6 @@
     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
     <link rel="shortcut icon" href="./public/favicon.ico">
     <link rel="stylesheet" href="./public/style/index.css">
-    <script src="./public/script/index.js"></script>
 </head>
 
 <body>
@@ -44,32 +43,27 @@
             </div>
             <div class="meta-item">
                 <a href="https://space.bilibili.com/1960746880/">
-                    <img src="./public/images/bilibili.webp" alt="BiliBili"
-                        class="account-img"></img>
+                    <img src="./public/images/bilibili.webp" alt="BiliBili" class="account-img"></img>
                 </a>
             </div>
             <div class="meta-item">
                 <a href="https://twitter.com/@lestday233">
-                    <img src="./public/images/twitter.webp" alt="Twitter"
-                        class="account-img"></img>
+                    <img src="./public/images/twitter.webp" alt="Twitter" class="account-img"></img>
                 </a>
             </div>
             <div class="meta-item">
                 <a href="https://github.com/lest-day">
-                    <img src="./public/images/github.webp" alt="Github"
-                        class="account-img"></img>
+                    <img src="./public/images/github.webp" alt="Github" class="account-img"></img>
                 </a>
             </div>
             <div class="meta-item">
                 <a href="https://youtube.com/@lestday233">
-                    <img src="./public/images/youtube.webp" alt="Youtube"
-                        class="account-img"></img>
+                    <img src="./public/images/youtube.webp" alt="Youtube" class="account-img"></img>
                 </a>
             </div>
             <div class="meta-item">
                 <a href="https://www.wikidot.com/user:info/lest-day">
-                    <img src="./public/images/wikidot.webp" alt="BiliBili"
-                        class="account-img"></img>
+                    <img src="./public/images/wikidot.webp" alt="BiliBili" class="account-img"></img>
                 </a>
             </div>
         </div>
@@ -92,21 +86,43 @@
         </div>
         <div class="other block">
             <div class="other-item">
-                <img src="./public/images/music.webp" alt="Music" id="music"
-                    class="other-img"></img>
+                <img src="./public/images/music.webp" alt="Music" id="music" class="other-img"></img>
             </div>
             <div class="other-item">
-                <img src="./public/images/darkadjust.webp" alt="Darkadjust" id="darkadjust"
-                    class="other-img"></img>
+                <img src="./public/images/darkadjust.webp" alt="Darkadjust" id="darkadjust" class="other-img"></img>
             </div>
             <div class="other-item">
-                <img src="./public/images/setting.webp" alt="Setting" id="setting"
-                    class="other-img"></img>
+                <img src="./public/images/setting.webp" alt="Setting" id="setting" class="other-img"></img>
             </div>
         </div>
         <div class="site-block block">
         </div>
     </div>
+    <script>
+        function updateTime() {
+            const timeElement = document.getElementById('time');
+            const now = new Date();
+            timeElement.textContent = now.toLocaleTimeString();
+        }
+
+        updateTime();
+        setInterval(updateTime, 1000); // 每隔1000毫秒更新一次时间
+
+        // 获取当前日期
+        const currentDate = new Date();
+
+        // 获取年月日星期
+        const year = currentDate.getFullYear();
+        const month = currentDate.getMonth() + 1;
+        const day = currentDate.getDate();
+        const dayOfWeek = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'][currentDate.getDay()];
+
+        // 将年月日星期拼接成字符串
+        const formattedDate = `${year}-${month}-${day} ${dayOfWeek}`;
+
+        // 将日期显示到id为data的元素内
+        document.getElementById('data').textContent = formattedDate;
+    </script>
 </body>
 
 </html>
