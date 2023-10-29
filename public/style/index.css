@@ -135,7 +135,7 @@ hr {
 
 .other-img {
     width: 100%;
-    padding: 1em 0 1em 0;
+    padding: .4em 0 .4em 0;
 }
 
 /* MOBILE STYLE */
@@ -152,7 +152,7 @@ hr {
 
     .account-img,
     .other-img {
-        width: 2em;
+        width: 1.5em;
     }
 
     .time-block .time {
