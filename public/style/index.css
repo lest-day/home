@@ -6,7 +6,7 @@ body {
 }
 
 .block {
-	margin: 1em;
+	margin: .8em;
 	padding: 1em;
 	border: .666667px solid rgba(255,255,255,.18);
 	-webkit-border-radius: 15px;
