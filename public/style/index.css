@@ -2,7 +2,7 @@
 
 body {
     background: url(https://t.mwm.moe/fj);
-    word-wrap:break-word;
+        word-wrap:break-word;
 }
 
 .block {
@@ -130,10 +130,15 @@ hr {
 
 .other-item {
     margin: auto;
-    padding: 10%;
+    display: block;
 }
 
-/* MOBILE(385) STYLE */
+.other-img {
+    width: 100%;
+    padding: 1em 0 1em 0;
+}
+
+/* MOBILE STYLE */
 @media (max-width: 385px) {
     .content-wrap {
         display: grid;
@@ -141,7 +146,7 @@ hr {
         grid-gap: 0;
         grid-template-areas:
             "infoblock   metablock  " "infoblock   timeblock" "infoblock   other      " "sayingblock sayingblock" "siteblock   siteblock  ";
-        width: 90%;
+        width: 100%;
         margin: auto;
     }
     .account-img {
@@ -155,17 +160,3 @@ hr {
         display:none;
     }
 }
-
-/* MOBILE(675) STYLE */
-@media (max-width: 675px) and (min-width: 385px){
-    .content-wrap {
-        display: grid;
-        grid-template-columns: 53% 38% 11%;
-        grid-gap: 0;
-        grid-template-areas:
-            "infoblock timeblock other" "infoblock sayingblock sayingblock" "infoblock sayingblock sayingblock" "siteblock siteblock siteblock";
-        width: 100%;
-        margin: auto;
-    }
-}
-
