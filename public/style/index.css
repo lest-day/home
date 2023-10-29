@@ -65,7 +65,11 @@ hr {
 }
 
 .meta-item {
-    display: inline-block;
+    display: inline;
+}
+
+.meta-item a {
+    text-decoration: none;
 }
 
 .avatar {
@@ -82,7 +86,7 @@ hr {
 }
 
 .account-img {
-    width: 2.6em;
+    width: 12%;
 }
 
 .infoname {
@@ -122,10 +126,7 @@ hr {
 }
 
 /* OTHER-BLOCK */
-.fas {
-    font-weight: 1000;
-    font-size: 150%;
-}
+
 
 .other-item {
     margin: auto;
