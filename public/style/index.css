@@ -8,17 +8,17 @@ body {
 .block {
 	margin: .8em;
 	padding: 1em;
-	border: .666667px solid rgba(255,255,255,.18);
+	border: .666667px solid rgba(255, 255, 255, .18);
 	-webkit-border-radius: 15px;
-	background-color: rgba(255,255,255,.3);
-	-webkit-box-shadow: rgba(142,142,142,.19) 0 6px 15px 0;
-	color: rgba(255,255,255,.9);
+	background-color: rgba(255, 255, 255, .3);
+	-webkit-box-shadow: rgba(142, 142, 142, .19) 0 6px 15px 0;
+	color: rgba(255, 255, 255, .9);
 	backdrop-filter: blur(5px);
 	-webkit-backdrop-filter: blur(5px);
 }
 
 hr {
-	border: 1px solid rgba(255,255,255,.9);
+	border: 1px solid rgba(255, 255, 255, .9);
 }
 
 .content-wrap {
@@ -72,7 +72,7 @@ hr {
 	width: 5em;
 	border: 2px solid #959595;
 	border-radius: 52%;
-	background: linear-gradient(145deg,#cacaca,#f0f0f0);
+	background: linear-gradient(145deg, #cacaca, #f0f0f0);
 }
 
 .avatar:hover {
@@ -140,7 +140,7 @@ hr {
 	}
 
 	.account-img,
-  .other-img {
+	.other-img {
 		width: 1.5em;
 	}
 
