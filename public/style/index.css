@@ -2,7 +2,7 @@
 
 body {
     background: url(https://t.mwm.moe/fj);
-        word-wrap:break-word;
+    word-wrap: break-word;
 }
 
 .block {
@@ -149,14 +149,18 @@ hr {
         width: 100%;
         margin: auto;
     }
-    .account-img {
-        width: 112%;
+
+    .account-img,
+    .other-img {
+        width: 2em;
     }
+
     .time-block .time {
         writing-mode: tb;
         font-size: 150%;
     }
+
     .time-block .data {
-        display:none;
+        display: none;
     }
 }
