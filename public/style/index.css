@@ -11,8 +11,6 @@ body {
     background-color: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(5px);
     border: 0.666667px solid rgba(255, 255, 255, 0.18);
-    -webkit-box-shadow: rgba(142, 142, 142, 0.19) 0px 6px 15px 0px;
-    -webkit-border-radius: 15px;
     color: rgba(255, 255, 255, 0.9);
     -webkit-backdrop-filter: blur(5px);
 }
@@ -162,5 +160,9 @@ hr {
 
     .time-block .data {
         display: none;
+    }
+
+    .meta-block {
+        height: 16em;
     }
 }
