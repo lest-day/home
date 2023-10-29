@@ -1,130 +1,159 @@
 @import "https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.4/css/all.min.css";
+
 body {
-  background:url(https://t.mwm.moe/fj);
-  word-wrap:break-word
+    background: url(https://t.mwm.moe/fj);
+    word-wrap: break-word
 }
+
 .block {
-  padding:1em;
-  margin:1em;
-  background-color:rgba(255,255,255,.3);
-  backdrop-filter:blur(5px);
-  border:.666667px solid rgba(255,255,255,.18);
-  color:rgba(255,255,255,.9);
-  -webkit-box-shadow:rgba(142,142,142,.19) 0 6px 15px 0;
-  -webkit-border-radius:15px;
-  -webkit-backdrop-filter:blur(5px)
+    padding: 1em;
+    margin: 1em;
+    background-color: rgba(255, 255, 255, .3);
+    backdrop-filter: blur(5px);
+    border: .666667px solid rgba(255, 255, 255, .18);
+    color: rgba(255, 255, 255, .9);
+    -webkit-box-shadow: rgba(142, 142, 142, .19) 0 6px 15px 0;
+    -webkit-border-radius: 15px;
+    -webkit-backdrop-filter: blur(5px)
 }
+
 hr {
-  border:1px solid rgba(255,255,255,.9)
+    border: 1px solid rgba(255, 255, 255, .9)
 }
+
 .content-wrap {
-  display:grid;
-  grid-template-columns:34% 32% 26% 8%;
-  grid-gap:2px;
-  grid-template-areas:"infoblock timeblock sayingblock other    " "infoblock siteblock siteblock   siteblock" "metablock siteblock siteblock   siteblock";
-  width:100%;
-  margin:auto
+    display: grid;
+    grid-template-columns: 34% 32% 26% 8%;
+    grid-gap: 2px;
+    grid-template-areas: "infoblock timeblock sayingblock other    " "infoblock siteblock siteblock   siteblock" "metablock siteblock siteblock   siteblock";
+    width: 100%;
+    margin: auto
 }
+
 .info-block {
-  grid-area:infoblock
+    grid-area: infoblock
 }
+
 .meta-block {
-  grid-area:metablock
+    grid-area: metablock
 }
+
 .time-block {
-  grid-area:timeblock
+    grid-area: timeblock
 }
+
 .saying-block {
-  grid-area:sayingblock
+    grid-area: sayingblock
 }
+
 .other {
-  grid-area:other
+    grid-area: other
 }
+
 .site-block {
-  grid-area:siteblock
+    grid-area: siteblock
 }
+
 .infoblock-main {
-  display:flex;
-  justify-content:center;
-  align-items:center
+    display: flex;
+    justify-content: center;
+    align-items: center
 }
+
 .meta-item {
-  display:inline
+    display: inline
 }
+
 .meta-item a {
-  text-decoration:none
+    text-decoration: none
 }
+
 .avatar {
-  border:2px solid #959595;
-  border-radius:52%;
-  background:linear-gradient(145deg,#cacaca,#f0f0f0);
-  width:5em
+    border: 2px solid #959595;
+    border-radius: 52%;
+    background: linear-gradient(145deg, #cacaca, #f0f0f0);
+    width: 5em
 }
+
 .avatar:hover {
-  transform:rotate(360deg);
-  transition-delay:.2s;
-  transition-duration:1s
+    transform: rotate(360deg);
+    transition-delay: .2s;
+    transition-duration: 1s
 }
+
 .account-img {
-  width:12%
+    width: 12%
 }
+
 .infoname {
-  font-weight:1000;
-  font-size:18px;
-  padding-left:.4em
+    font-weight: 1000;
+    font-size: 18px;
+    padding-left: .4em
 }
+
 .profile {
-  font-size:13px
+    font-size: 13px
 }
+
 .time {
-  font-weight:1000;
-  font-size:xx-large;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  width:100%;
+    font-weight: 1000;
+    font-size: xx-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
+
 .data {
-  display:flex;
-  justify-content:center;
-  align-items:center
+    display: flex;
+    justify-content: center;
+    align-items: center
 }
+
 .jinrishici-sentence {
-  font-size:1.5em;
-  font-weight:1000
+    font-size: 1.5em;
+    font-weight: 1000
 }
+
 .jinrishici-info {
-  font-size:1.2em
+    font-size: 1.2em
 }
+
 .other-item {
-  margin:auto;
-  display:block
+    margin: auto;
+    display: block
 }
+
 .other-img {
-  width:100%;
-  padding:.4em 0
+    width: 100%;
+    padding: .4em 0
 }
-@media(max-width:385px) {
-  .content-wrap {
-    display:grid;
-    grid-template-columns:85% 20%;
-    grid-gap:0;
-    grid-template-areas:"infoblock   metablock  " "infoblock   timeblock" "infoblock   other      " "sayingblock sayingblock" "siteblock   siteblock  ";
-    width:100%;
-    margin:auto
-  }
-  .account-img,
-  .other-img {
-    width:1.5em
-  }
-  .time-block .time {
-    writing-mode:tb;
-    font-size:150%
-  }
-  .time-block .data {
-    display:none
-  }
-  .meta-block {
-    height:16em
-  }
+
+@media(max-width:415px) {
+    .content-wrap {
+        display: grid;
+        grid-template-columns: 85% 20%;
+        grid-gap: 0;
+        grid-template-areas: "infoblock   metablock  " "infoblock   timeblock" "infoblock   other      " "sayingblock sayingblock" "siteblock   siteblock  ";
+        width: 100%;
+        margin: auto
+    }
+
+    .account-img,
+    .other-img {
+        width: 1.5em
+    }
+
+    .time-block .time {
+        writing-mode: tb;
+        font-size: 150%
+    }
+
+    .time-block .data {
+        display: none
+    }
+
+    .meta-block {
+        height: 16em
+    }
 }
