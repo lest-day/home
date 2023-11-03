@@ -5,18 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lest-day的个人主页</title>
     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js" charset="utf-8"></script>
     <link rel="shortcut icon" href="./public/favicon.ico">
     <link rel="stylesheet" href="./public/style/index.css">
 </head>
 
-<body>
+<body onload="getWeatherData()">
     <noscript>
         <div style="text-align: center">请开启 JavaScript</div>
     </noscript>
     <div class="content-wrap">
         <div class="info-block block">
             <div class="infoblock-main">
-                <img src="./public/images/cropped.webp" alt="lest-day的头像" class="avatar"><br>
+                <img data-src="./public/images/cropped.webp" class="avatar lozad" alt="lest-day的头像" loading="lazy"
+                    decoding="async"><br>
                 <div class="infoname">lest-day</div>
             </div>
             <hr>
@@ -33,43 +35,52 @@
         <div class="meta-block block">
             <div class="meta-item">
                 <a href="https://api.oioweb.cn/api/qq/joingroup?guin=883423270">
-                    <img src="./public/images/qq.webp" alt="QQQun" class="account-img"></img>
+                    <img data-src="./public/images/qq.webp" alt="QQQun" class="account-img lozad" loading="lazy"
+                        decoding="async"></img>
                 </a>
             </div>
             <div class="meta-item">
                 <a href="mailto:email@lestday233.eu.org">
-                    <img src="./public/images/email.webp" alt="Email" class="account-img"></img>
+                    <img data-src="./public/images/email.webp" alt="Email" class="account-img lozad" loading="lazy"
+                        decoding="async"></img>
                 </a>
             </div>
             <div class="meta-item">
                 <a href="https://space.bilibili.com/1960746880/">
-                    <img src="./public/images/bilibili.webp" alt="BiliBili" class="account-img"></img>
+                    <img data-src="./public/images/bilibili.webp" alt="BiliBili" class="account-img lozad"
+                        loading="lazy" decoding="async"></img>
                 </a>
             </div>
             <div class="meta-item">
                 <a href="https://twitter.com/@lestday233">
-                    <img src="./public/images/twitter.webp" alt="Twitter" class="account-img"></img>
+                    <img data-src="./public/images/twitter.webp" alt="Twitter" class="account-img lozad" loading="lazy"
+                        decoding="async"></img>
                 </a>
             </div>
             <div class="meta-item">
                 <a href="https://github.com/lest-day">
-                    <img src="./public/images/github.webp" alt="Github" class="account-img"></img>
+                    <img data-src="./public/images/github.webp" alt="Github" class="account-img lozad" loading="lazy"
+                        decoding="async"></img>
                 </a>
             </div>
             <div class="meta-item">
                 <a href="https://youtube.com/@lestday233">
-                    <img src="./public/images/youtube.webp" alt="Youtube" class="account-img"></img>
+                    <img data-src="./public/images/youtube.webp" alt="Youtube" class="account-img lozad" loading="lazy"
+                        decoding="async"></img>
                 </a>
             </div>
             <div class="meta-item">
                 <a href="https://www.wikidot.com/user:info/lest-day">
-                    <img src="./public/images/wikidot.webp" alt="BiliBili" class="account-img"></img>
+                    <img data-src="./public/images/wikidot.webp" alt="BiliBili" class="account-img lozad" loading="lazy"
+                        decoding="async"></img>
                 </a>
             </div>
         </div>
         <div class="time-block block">
             <div class="time" id="time"></div>
             <div class="data" id="data"></div>
+            <hr>
+            <div class="weather" id="weather"></div>
         </div>
         <div class="saying-block block">
             <div id="jinrishici-sentence" class="jinrishici-sentence">正在加载今日诗词....</div>
@@ -83,25 +94,139 @@
                     info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
                 });
             </script>
+            <script>
+                async function getWeatherData() {
+                    // 获取API数据
+                    const url = "https://api.vvhan.com/api/weather";
+                    const response = await fetch(url);
+                    const data = await response.json();
+
+                    // 解析数据
+                    const city = data.city;
+                    const weatherData = data.info;
+
+                    // 提取所需属性
+                    const type = weatherData.type;
+                    const low = weatherData.low;
+                    const high = weatherData.high;
+                    const fengxiang = weatherData.fengxiang;
+
+                    // 显示数据
+                    const displayText = `${city}，${type}，${high} ~ ${low}`;
+
+                    // 更新HTML页面
+                    document.getElementById("weather").innerText = displayText;
+                }
+            </script>
         </div>
         <div class="other block">
             <div class="other-item">
-                <img src="./public/images/music.webp" alt="Music" id="music" onclick="PAGEMessage.musicClick()"
-                    class="other-img"></img>
+                <img data-src="./public/images/music.webp" alt="Music" id="music" loading="lazy" decoding="async"
+                    onclick="PAGEMessage.musicClick()" class="other-img lozad"></img>
             </div>
             <div class="other-item">
-                <img src="./public/images/darkadjust.webp" alt="Darkadjust" id="darkadjust"
-                    onclick="PAGEMessage.darkadjustClick()" class="other-img"></img>
+                <img data-src="./public/images/darkadjust.webp" alt="Darkadjust" id="darkadjust" loading="lazy"
+                    decoding="async" onclick="PAGEMessage.darkadjustClick()" class="other-img lozad"></img>
             </div>
             <div class="other-item">
-                <img src="./public/images/setting.webp" alt="Setting" id="setting" onclick="PAGEMessage.settingClick()"
-                    class="other-img"></img>
+                <img data-src="./public/images/setting.webp" alt="Setting" id="setting" loading="lazy" decoding="async"
+                    onclick="PAGEMessage.settingClick()" class="other-img lozad"></img>
             </div>
         </div>
         <div class="site-block block">
+            <h2 class="siteblock-title">
+                我的网站
+            </h2>
+            <div class="site-my">
+                <div class="site-item">
+                    <a class="site-bookmark" href="https://nav.lestday233.eu.org/">
+                        <div>
+                            <div class="site-bookmark-title">导航站</div>
+                            <div class="site-bookmark-description">lest-day的私人导航</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="site-item">
+                    <a class="site-bookmark" href="https://blog.lestday233.eu.org/">
+                        <div>
+                            <div class="site-bookmark-title">博客站</div>
+                            <div class="site-bookmark-description">lest-day的私人博客</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="site-item">
+                    <a class="site-bookmark" href="https://wiki.lestday233.eu.org/">
+                        <div>
+                            <div class="site-bookmark-title">维基站</div>
+                            <div class="site-bookmark-description">lest-day的私人网站</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="site-item">
+                    <a class="site-bookmark" href="https://files.lestday233.eu.org/">
+                        <div>
+                            <div class="site-bookmark-title">文件站</div>
+                            <div class="site-bookmark-description">lest-day的文件存储</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <h2 class="siteblock-title">
+                常去网站
+            </h2>
+            <div class="site-often">
+                <div class="site-item">
+                    <a class="site-bookmark" href="https://deep-forest-club.wikidot.com/">
+                        <div>
+                            <img data-src="https://deep-forest-club.wikidot.com/local--favicon/favicon.gif"
+                                class="site-icon lozad" alt="深林文学部" loading="lazy" decoding="async">
+                            <div class="site-bookmark-title">深林文学部</div>
+                            <div class="site-bookmark-description">这是一片热爱文学的森林！</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="site-item">
+                    <a class="site-bookmark" href="https://timeline-bookstore.wikidot.com/">
+                        <div>
+                            <img data-src="https://timeline-bookstore.wikidot.com/local--favicon/favicon.gif"
+                                class="site-icon lozad" alt="深林文学部" loading="lazy" decoding="async">
+                            <div class="site-bookmark-title">时间轴书店</div>
+                            <div class="site-bookmark-description">这里是文学创作的好地方</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="site-item">
+                    <a class="site-bookmark" href="https://timeline-bookstore.wikidot.com/">
+                        <div>
+                            <img data-src="https://www.bilibili.com/favicon.ico?v=1" class="site-icon lozad" alt="哔哩哔哩"
+                                loading="lazy" decoding="async">
+                            <div class="site-bookmark-title">哔哩哔哩</div>
+                            <div class="site-bookmark-description">国内知名的视频弹幕网站</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="site-item">
+                    <a class="site-bookmark" href="https://www.bing.com/">
+                        <div>
+                            <img data-src="https://cn.bing.com/sa/simg/favicon-trans-bg-blue-mg-png.png"
+                                class="site-icon lozad" alt="必应搜索" loading="lazy" decoding="async">
+                            <div class="site-bookmark-title">必应搜索</div>
+                            <div class="site-bookmark-description">必应搜索更加方便快捷</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
     <script>
+        // 图片延时加载
+        const observer = lozad();
+        observer.observe();
+
+
         // 时间日期功能
         function updateTime() {
             const timeElement = document.getElementById('time');
