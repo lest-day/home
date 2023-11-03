@@ -13,7 +13,7 @@ hr{border:1px solid hsla(0,0%,100%,.9)}
 .meta-item a{text-decoration:none}
 .avatar{width:5em;border:2px solid #959595;border-radius:52%;background:linear-gradient(145deg,#cacaca,#f0f0f0)}
 .avatar:hover{transition-delay:.2s;transition-duration:1s;transform:rotate(1turn)}
-.account-img{width:12%}
+.account-img{padding:.4em 0;width: 2.5vw;height: 2.5vw;}
 .infoname{padding-left:.4em;font-weight:1000;font-size:18px}
 .profile{font-size:13px}
 .time{width:100%;font-weight:1000;font-size:xx-large}
@@ -22,7 +22,7 @@ hr{border:1px solid hsla(0,0%,100%,.9)}
 .jinrishici-info{font-size:1.2em}
 .other-img{padding:.4em 0;width:2vh}
 @media(max-width:496px){.content-wrap{display:grid;margin:auto;width:100%;grid-template-columns:82% 23%;grid-gap:0;grid-template-areas:"infoblock   metablock  " "infoblock   timeblock" "infoblock   other      " "sayingblock sayingblock" "siteblock   siteblock  "}
-.account-img,.other-img{width:1.5em}
+.account-img,.other-img{width:1.5em;height: 1.5em;}
 .time-block .time{font-size:150%;writing-mode:tb}
 .time-block .data{display:none}
 .meta-item{display:block}
