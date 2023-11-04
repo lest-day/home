@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lest-day的个人主页</title>
     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script src="https://api.vvhan.com/api/yinghua" charset="utf-8"></script>
     <link rel="shortcut icon" href="./public/favicon.ico">
     <link rel="stylesheet" href="./public/style/index.css">
 </head>
@@ -19,6 +20,12 @@
         <div class="setting">
             <div class="setting-appearance">
                 <div class="setting-title">外观</div>
+                <div class="setting-item">
+                    <strong>背景链接</strong>：<input type="url" id="background" name="background">
+                    <div class="setting-item-info">
+                        默认为随机的背景图，你可以通过添加链接来取消随机并自定义背景图片。
+                    </div>
+                </div>
             </div>
             <div class="setting-function">
                 <div class="setting-title">功能</div>
@@ -97,7 +104,7 @@
         <div class="time-block block">
             <div class="time" id="time"></div>
             <div class="data" id="data"></div>
-            <div class="weather" id="weather"></div>
+            <div id="weather" class="weather"></div>
         </div>
         <div class="saying-block block">
             <div id="jinrishici-sentence" class="jinrishici-sentence">正在加载今日诗词....</div>

@@ -27,13 +27,22 @@ body {
     position: fixed
 }
 
+.setting-item-info {
+    font-size: 84%;
+    color: #ddd;
+}
+
 .setting-appearance,
 .setting-function,
 .setting-developers,
 .setting-devlog {
     border-right: .2em solid hsla(0, 0%, 100%, .18);
-    margin: 1em;
+    margin: 0.3em;
     padding: 1em;
+}
+
+.setting-title {
+    font-size: x-large;
 }
 
 hr {
