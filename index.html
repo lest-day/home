@@ -52,7 +52,11 @@
             </div>
             <div class="meta-item">
                 <a href="https://space.bilibili.com/1960746880/">
+<<<<<<< Updated upstream
                     <img src="./public/images/bilibili.webp" alt="BiliBili" class="account-img" loading="lazy"
+=======
+                    <img src="./public/images/bilibili.webp" alt="BiliBili" class="account-img lozad" loading="lazy"
+>>>>>>> Stashed changes
                         decoding="async"></img>
                 </a>
             </div>
@@ -106,20 +110,16 @@
                     const url = "https://api.vvhan.com/api/weather";
                     const response = await fetch(url);
                     const data = await response.json();
-
                     // 解析数据
                     const city = data.city;
                     const weatherData = data.info;
-
                     // 提取所需属性
                     const type = weatherData.type;
                     const low = weatherData.low;
                     const high = weatherData.high;
                     const fengxiang = weatherData.fengxiang;
-
                     // 显示数据
                     const displayText = `${city}，${type}，${high} ~ ${low}`;
-
                     // 更新HTML页面
                     document.getElementById("weather").innerText = displayText;
                 }
