@@ -16,7 +16,20 @@
 
     <div id="setting-block" class="setting-block block" style="display:none">
         <h2 class="settingblock-title">设置内容</h2>
-
+        <div class="setting">
+            <div class="setting-appearance">
+                <div class="setting-title">外观</div>
+            </div>
+            <div class="setting-function">
+                <div class="setting-title">功能</div>
+            </div>
+            <div class="setting-developers">
+                <div class="setting-title">开发</div>
+            </div>
+            <div class="setting-devlog">
+                <div class="setting-title">日志</div>
+            </div>
+        </div>
     </div>
 
     <div class="content-wrap">
@@ -236,6 +249,8 @@
         // 设置相关功能
         // | 显示设置方框
         function showHideElement() { const settingBlock = document.getElementById('setting-block'); if (settingBlock.style.display === 'none') { settingBlock.style.display = 'block' } else { settingBlock.style.display = 'none' } }
+        // | 编辑更新日志
+
     </script>
 </body>
 
