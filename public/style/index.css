@@ -17,6 +17,10 @@ body {
     -webkit-backdrop-filter: blur(5px)
 }
 
+.bg-black {
+    background-color: rgba(43, 43, 43, 0.945);
+}
+
 .setting-block {
     width: 58%;
     overflow: hidden;
@@ -65,7 +69,8 @@ hr {
     grid-area: siteblock
 }
 
-.siteblock-title,.settingblock-title {
+.siteblock-title,
+.settingblock-title {
     border-bottom: 1.4px solid hsla(0, 0%, 100%, .9);
     ;
 }

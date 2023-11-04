@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lest-day的个人主页</title>
-    <!-- <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script> -->
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
     <link rel="shortcut icon" href="./public/favicon.ico">
     <link rel="stylesheet" href="./public/style/index.css">
 </head>
@@ -52,11 +52,7 @@
             </div>
             <div class="meta-item">
                 <a href="https://space.bilibili.com/1960746880/">
-<<<<<<< Updated upstream
                     <img src="./public/images/bilibili.webp" alt="BiliBili" class="account-img" loading="lazy"
-=======
-                    <img src="./public/images/bilibili.webp" alt="BiliBili" class="account-img lozad" loading="lazy"
->>>>>>> Stashed changes
                         decoding="async"></img>
                 </a>
             </div>
@@ -95,8 +91,6 @@
             <br>
             <div id="jinrishici-info" class="jinrishici-info"></div>
             <script type="text/javascript">
-                !function (e) { var n, t = {}, o = "jinrishici-token"; function i() { return document.getElementById("jinrishici-sentence") || 0 != document.getElementsByClassName("jinrishici-sentence").length } function c() { t.load(function (e) { var n = document.getElementById("jinrishici-sentence"), t = document.getElementsByClassName("jinrishici-sentence"); if (n && (n.innerText = e.data.content), 0 !== t.length) for (var o = 0; o < t.length; o++)t[o].innerText = e.data.content }) } function r(e, n) { var t = new XMLHttpRequest; t.open("get", n), t.withCredentials = !0, t.send(), t.onreadystatechange = function (n) { if (4 === t.readyState) { var o = JSON.parse(t.responseText); "success" === o.status ? e(o) : console.error("今日诗词API加载失败，错误原因：" + o.errMessage) } } } t.load = function (n) { return e.localStorage && e.localStorage.getItem(o) ? function (e, n) { return r(e, "https://v2.jinrishici.com/one.json?client=browser-sdk/1.2&X-User-Token=" + encodeURIComponent(n)) }(n, e.localStorage.getItem(o)) : function (n) { return r(function (t) { e.localStorage.setItem(o, t.token), n(t) }, "https://v2.jinrishici.com/one.json?client=browser-sdk/1.2") }(n) }, e.jinrishici = t, i() ? c() : (n = function () { i() && c() }, "loading" != document.readyState ? n() : document.addEventListener ? document.addEventListener("DOMContentLoaded", n) : document.attachEvent("onreadystatechange", function () { "complete" == document.readyState && n() })) }(window);
-
                 jinrishici.load(function (result) {
                     var sentence = document.querySelector("#jinrishici-sentence")
                     var info = document.querySelector("#jinrishici-info")
@@ -228,89 +222,21 @@
         </div>
     </div>
 
-    <audio id="musicPlayer" style="display:none;margin:10px auto" controls autoplay></audio>
+    <audio id="musicPlayer" style="display:none;height:0;width:0" controls autoplay></audio>
 
     <script>
+        // 访问信息存储
+        function setClientInfoCookie() { const ua = navigator.userAgent; const device = window.devicePixelRatio || 1; const clientInfo = `UA:${ua},Device:${device}`; const encodedClientInfo = btoa(clientInfo); document.cookie = `info=${encodedClientInfo};expires=Thu,31 Dec 2099 23:59:59 UTC;path=/` } document.addEventListener('DOMContentLoaded', function () { setClientInfoCookie() });
         // 时间日期功能
-        function updateTime() {
-            const timeElement = document.getElementById('time');
-            const now = new Date();
-            timeElement.textContent = now.toLocaleTimeString();
-        }
-
-        updateTime();
-        setInterval(updateTime, 1000); // 每隔1000毫秒更新一次时间
-
-        const currentDate = new Date();
-        const year = currentDate.getFullYear();
-        const month = currentDate.getMonth() + 1;
-        const day = currentDate.getDate();
-        const dayOfWeek = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'][currentDate.getDay()];
-        const formattedDate = `${year}-${month}-${day} ${dayOfWeek}`;
-        document.getElementById('data').textContent = formattedDate;
-
-
+        function updateTime() { const timeElement = document.getElementById('time'); const now = new Date(); timeElement.textContent = now.toLocaleTimeString() } updateTime(); setInterval(updateTime, 1000); const currentDate = new Date(); const year = currentDate.getFullYear(); const month = currentDate.getMonth() + 1; const day = currentDate.getDate(); const dayOfWeek = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'][currentDate.getDay()]; const formattedDate = `${year}-${month}-${day}${dayOfWeek}`; document.getElementById('data').textContent = formattedDate;
         // 开关音乐功能
-        function playMusic(url) {
-            const musicPlayer = document.getElementById('musicPlayer');
-            musicPlayer.src = url;
-            musicPlayer.play();
-        }
-
-        function pauseMusic() {
-            const musicPlayer = document.getElementById('musicPlayer');
-            musicPlayer.pause();
-        }
-
-        function musicClick() {
-            const musicPlayer = document.getElementById('musicPlayer');
-            if (musicPlayer.paused) {
-                playMusic('https://m801.music.126.net/20231104114622/323f6bcb4ee827b6477c451f4d58993b/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/19289256253/e650/81c9/0e23/575d98de27879f98555b68033bf510b2.mp3');
-            } else {
-                pauseMusic();
-            }
-        }
-
-
+        let currentTime; function playMusic(url) { const musicPlayer = document.getElementById('musicPlayer'); musicPlayer.src = url; musicPlayer.play(); currentTime = musicPlayer.currentTime; musicPlayer.addEventListener('ended', musicResume) } function pauseMusic() { const musicPlayer = document.getElementById('musicPlayer'); musicPlayer.pause() } function musicResume() { const musicPlayer = document.getElementById('musicPlayer'); musicPlayer.currentTime = currentTime; musicPlayer.play() } function musicClick() { const musicPlayer = document.getElementById('musicPlayer'); if (musicPlayer.paused) { playMusic('https://m801.music.126.net/20231104114622/323f6bcb4ee827b6477c451f4d58993b/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/19289256253/e650/81c9/0e23/575d98de27879f98555b68033bf510b2.mp3') } else { pauseMusic() } currentTime = musicPlayer.currentTime }
         // 暗色切换功能
-        let isAddingClass = true;
-
-        document.getElementById("darkadjust").addEventListener("click", function () {
-            if (isAddingClass) {
-                const blocks = document.getElementsByClassName("block");
-                for (let i = 0; i < blocks.length; i++) {
-                    blocks[i].classList.add("bg-black");
-                    document.cookie="dark=true";
-                }
-                isAddingClass = false;
-            } else {
-                const blocks = document.getElementsByClassName("block");
-                for (let i = 0; i < blocks.length; i++) {
-                    blocks[i].classList.remove("bg-black");
-                    document.cookie="dark=false";
-                }
-                isAddingClass = true;
-            }
-        });
-
-
+        let isAddingClass = true; document.getElementById("darkadjust").addEventListener("click", function () { if (isAddingClass) { const blocks = document.getElementsByClassName("block"); for (let i = 0; i < blocks.length; i++) { blocks[i].classList.add("bg-black"); document.cookie = "dark=true" } isAddingClass = false } else { const blocks = document.getElementsByClassName("block"); for (let i = 0; i < blocks.length; i++) { blocks[i].classList.remove("bg-black"); document.cookie = "dark=false" } isAddingClass = true } }); document.addEventListener("DOMContentLoaded", function () { const cookie = document.cookie; if (cookie.includes("dark=true")) { const blocks = document.getElementsByClassName("block"); for (let i = 0; i < blocks.length; i++) { blocks[i].classList.add("bg-black") } } else { const blocks = document.getElementsByClassName("block"); for (let i = 0; i < blocks.length; i++) { blocks[i].classList.remove("bg-black") } } setCookie() }); function setCookie() { const date = new Date(); date.setTime(date.getTime() + (exdays * 24 * 60 * 60 * 1000)); const expires = "expires=" + date.toUTCString(); document.cookie = "dark=" + ((document.cookie.includes("dark=true")) ? "false" : "true") + ";" + expires + ";path=/" }
         // 设置相关功能
         // | 显示设置方框
-        function showHideElement() {
-            const settingBlock = document.getElementById('setting-block');
-            if (settingBlock.style.display === 'none') {
-                settingBlock.style.display = 'block';
-            } else {
-                settingBlock.style.display = 'none';
-            }
-        }
-
+        function showHideElement() { const settingBlock = document.getElementById('setting-block'); if (settingBlock.style.display === 'none') { settingBlock.style.display = 'block' } else { settingBlock.style.display = 'none' } }
     </script>
-    <style>
-        .bg-black {
-            background-color: rgba(43, 43, 43, 0.945);
-        }
-    </style>
 </body>
 
 </html>
