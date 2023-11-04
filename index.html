@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lest-day的个人主页</title>
-    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js" charset="utf-8"></script>
+    <!-- <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script> -->
     <link rel="shortcut icon" href="./public/favicon.ico">
     <link rel="stylesheet" href="./public/style/index.css">
 </head>
@@ -14,10 +13,16 @@
     <noscript>
         <div style="text-align: center">请开启 JavaScript</div>
     </noscript>
+
+    <div id="setting-block" class="setting-block block" style="display:none">
+        <h2 class="settingblock-title">设置内容</h2>
+
+    </div>
+
     <div class="content-wrap">
         <div class="info-block block">
             <div class="infoblock-main">
-                <img src="./public/images/cropped.webp" class="avatar lozad" alt="lest-day的头像" loading="lazy"
+                <img src="./public/images/cropped.webp" class="avatar" alt="lest-day的头像" loading="lazy"
                     decoding="async"><br>
                 <div class="infoname">lest-day</div>
             </div>
@@ -35,43 +40,43 @@
         <div class="meta-block block">
             <div class="meta-item">
                 <a href="https://api.oioweb.cn/api/qq/joingroup?guin=883423270">
-                    <img src="./public/images/qq.webp" alt="QQQun" class="account-img lozad" loading="lazy"
+                    <img src="./public/images/qq.webp" alt="QQQun" class="account-img" loading="lazy"
                         decoding="async"></img>
                 </a>
             </div>
             <div class="meta-item">
                 <a href="mailto:email@lestday233.eu.org">
-                    <img src="./public/images/email.webp" alt="Email" class="account-img lozad" loading="lazy"
+                    <img src="./public/images/email.webp" alt="Email" class="account-img" loading="lazy"
                         decoding="async"></img>
                 </a>
             </div>
             <div class="meta-item">
                 <a href="https://space.bilibili.com/1960746880/">
-                    <img src="./public/images/bilibili.webp" alt="BiliBili" class="account-img lozad"
-                        loading="lazy" decoding="async"></img>
+                    <img src="./public/images/bilibili.webp" alt="BiliBili" class="account-img" loading="lazy"
+                        decoding="async"></img>
                 </a>
             </div>
             <div class="meta-item">
                 <a href="https://twitter.com/@lestday233">
-                    <img src="./public/images/twitter.webp" alt="Twitter" class="account-img lozad" loading="lazy"
+                    <img src="./public/images/twitter.webp" alt="Twitter" class="account-img" loading="lazy"
                         decoding="async"></img>
                 </a>
             </div>
             <div class="meta-item">
                 <a href="https://github.com/lest-day">
-                    <img src="./public/images/github.webp" alt="Github" class="account-img lozad" loading="lazy"
+                    <img src="./public/images/github.webp" alt="Github" class="account-img" loading="lazy"
                         decoding="async"></img>
                 </a>
             </div>
             <div class="meta-item">
                 <a href="https://youtube.com/@lestday233">
-                    <img src="./public/images/youtube.webp" alt="Youtube" class="account-img lozad" loading="lazy"
+                    <img src="./public/images/youtube.webp" alt="Youtube" class="account-img" loading="lazy"
                         decoding="async"></img>
                 </a>
             </div>
             <div class="meta-item">
                 <a href="https://www.wikidot.com/user:info/lest-day">
-                    <img src="./public/images/wikidot.webp" alt="BiliBili" class="account-img lozad" loading="lazy"
+                    <img src="./public/images/wikidot.webp" alt="BiliBili" class="account-img" loading="lazy"
                         decoding="async"></img>
                 </a>
             </div>
@@ -79,7 +84,6 @@
         <div class="time-block block">
             <div class="time" id="time"></div>
             <div class="data" id="data"></div>
-            <hr>
             <div class="weather" id="weather"></div>
         </div>
         <div class="saying-block block">
@@ -87,6 +91,8 @@
             <br>
             <div id="jinrishici-info" class="jinrishici-info"></div>
             <script type="text/javascript">
+                !function (e) { var n, t = {}, o = "jinrishici-token"; function i() { return document.getElementById("jinrishici-sentence") || 0 != document.getElementsByClassName("jinrishici-sentence").length } function c() { t.load(function (e) { var n = document.getElementById("jinrishici-sentence"), t = document.getElementsByClassName("jinrishici-sentence"); if (n && (n.innerText = e.data.content), 0 !== t.length) for (var o = 0; o < t.length; o++)t[o].innerText = e.data.content }) } function r(e, n) { var t = new XMLHttpRequest; t.open("get", n), t.withCredentials = !0, t.send(), t.onreadystatechange = function (n) { if (4 === t.readyState) { var o = JSON.parse(t.responseText); "success" === o.status ? e(o) : console.error("今日诗词API加载失败，错误原因：" + o.errMessage) } } } t.load = function (n) { return e.localStorage && e.localStorage.getItem(o) ? function (e, n) { return r(e, "https://v2.jinrishici.com/one.json?client=browser-sdk/1.2&X-User-Token=" + encodeURIComponent(n)) }(n, e.localStorage.getItem(o)) : function (n) { return r(function (t) { e.localStorage.setItem(o, t.token), n(t) }, "https://v2.jinrishici.com/one.json?client=browser-sdk/1.2") }(n) }, e.jinrishici = t, i() ? c() : (n = function () { i() && c() }, "loading" != document.readyState ? n() : document.addEventListener ? document.addEventListener("DOMContentLoaded", n) : document.attachEvent("onreadystatechange", function () { "complete" == document.readyState && n() })) }(window);
+
                 jinrishici.load(function (result) {
                     var sentence = document.querySelector("#jinrishici-sentence")
                     var info = document.querySelector("#jinrishici-info")
@@ -121,16 +127,16 @@
         </div>
         <div class="other block">
             <div class="other-item">
-                <img src="./public/images/music.webp" alt="Music" id="music" loading="lazy" decoding="async"
-                    onclick="PAGEMessage.musicClick()" class="other-img lozad"></img>
+                <img src="./public/images/music.webp" alt="Music" id="Music" loading="lazy" decoding="async"
+                    onclick="musicClick()" class="other-img"></img>
             </div>
             <div class="other-item">
                 <img src="./public/images/darkadjust.webp" alt="Darkadjust" id="darkadjust" loading="lazy"
-                    decoding="async" onclick="PAGEMessage.darkadjustClick()" class="other-img lozad"></img>
+                    decoding="async" class="other-img"></img>
             </div>
             <div class="other-item">
                 <img src="./public/images/setting.webp" alt="Setting" id="setting" loading="lazy" decoding="async"
-                    onclick="PAGEMessage.settingClick()" class="other-img lozad"></img>
+                    onclick="showHideElement()" class="other-img"></img>
             </div>
         </div>
         <div class="site-block block">
@@ -178,8 +184,8 @@
                 <div class="site-item">
                     <a class="site-bookmark" href="https://deep-forest-club.wikidot.com/">
                         <div>
-                            <img src="https://deep-forest-club.wikidot.com/local--favicon/favicon.gif"
-                                class="site-icon lozad" alt="深林文学部" loading="lazy" decoding="async">
+                            <img src="https://deep-forest-club.wikidot.com/local--favicon/favicon.gif" class="site-icon"
+                                alt="深林文学部" loading="lazy" decoding="async">
                             <div class="site-bookmark-title">深林文学部</div>
                             <div class="site-bookmark-description">这是一片热爱文学的森林！</div>
                         </div>
@@ -190,7 +196,7 @@
                     <a class="site-bookmark" href="https://timeline-bookstore.wikidot.com/">
                         <div>
                             <img src="https://timeline-bookstore.wikidot.com/local--favicon/favicon.gif"
-                                class="site-icon lozad" alt="深林文学部" loading="lazy" decoding="async">
+                                class="site-icon" alt="深林文学部" loading="lazy" decoding="async">
                             <div class="site-bookmark-title">时间轴书店</div>
                             <div class="site-bookmark-description">这里是文学创作的好地方</div>
                         </div>
@@ -200,7 +206,7 @@
                 <div class="site-item">
                     <a class="site-bookmark" href="https://timeline-bookstore.wikidot.com/">
                         <div>
-                            <img src="https://www.bilibili.com/favicon.ico?v=1" class="site-icon lozad" alt="哔哩哔哩"
+                            <img src="https://www.bilibili.com/favicon.ico?v=1" class="site-icon" alt="哔哩哔哩"
                                 loading="lazy" decoding="async">
                             <div class="site-bookmark-title">哔哩哔哩</div>
                             <div class="site-bookmark-description">国内知名的视频弹幕网站</div>
@@ -211,8 +217,8 @@
                 <div class="site-item">
                     <a class="site-bookmark" href="https://www.bing.com/">
                         <div>
-                            <img src="https://cn.bing.com/sa/simg/favicon-trans-bg-blue-mg-png.png"
-                                class="site-icon lozad" alt="必应搜索" loading="lazy" decoding="async">
+                            <img src="https://cn.bing.com/sa/simg/favicon-trans-bg-blue-mg-png.png" class="site-icon"
+                                alt="必应搜索" loading="lazy" decoding="async">
                             <div class="site-bookmark-title">必应搜索</div>
                             <div class="site-bookmark-description">必应搜索更加方便快捷</div>
                         </div>
@@ -221,12 +227,10 @@
             </div>
         </div>
     </div>
+
+    <audio id="musicPlayer" style="display:none;margin:10px auto" controls autoplay></audio>
+
     <script>
-        // 图片延时加载
-        const observer = lozad();
-        observer.observe();
-
-
         // 时间日期功能
         function updateTime() {
             const timeElement = document.getElementById('time');
@@ -245,6 +249,29 @@
         const formattedDate = `${year}-${month}-${day} ${dayOfWeek}`;
         document.getElementById('data').textContent = formattedDate;
 
+
+        // 开关音乐功能
+        function playMusic(url) {
+            const musicPlayer = document.getElementById('musicPlayer');
+            musicPlayer.src = url;
+            musicPlayer.play();
+        }
+
+        function pauseMusic() {
+            const musicPlayer = document.getElementById('musicPlayer');
+            musicPlayer.pause();
+        }
+
+        function musicClick() {
+            const musicPlayer = document.getElementById('musicPlayer');
+            if (musicPlayer.paused) {
+                playMusic('https://m801.music.126.net/20231104114622/323f6bcb4ee827b6477c451f4d58993b/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/19289256253/e650/81c9/0e23/575d98de27879f98555b68033bf510b2.mp3');
+            } else {
+                pauseMusic();
+            }
+        }
+
+
         // 暗色切换功能
         let isAddingClass = true;
 
@@ -253,16 +280,31 @@
                 const blocks = document.getElementsByClassName("block");
                 for (let i = 0; i < blocks.length; i++) {
                     blocks[i].classList.add("bg-black");
+                    document.cookie="dark=true";
                 }
                 isAddingClass = false;
             } else {
                 const blocks = document.getElementsByClassName("block");
                 for (let i = 0; i < blocks.length; i++) {
                     blocks[i].classList.remove("bg-black");
+                    document.cookie="dark=false";
                 }
                 isAddingClass = true;
             }
         });
+
+
+        // 设置相关功能
+        // | 显示设置方框
+        function showHideElement() {
+            const settingBlock = document.getElementById('setting-block');
+            if (settingBlock.style.display === 'none') {
+                settingBlock.style.display = 'block';
+            } else {
+                settingBlock.style.display = 'none';
+            }
+        }
+
     </script>
     <style>
         .bg-black {
