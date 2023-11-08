@@ -256,6 +256,9 @@ hr {
     .other-img {
         width: 1.5vh
     }
+    .time-block {
+        height: 100px;
+    }
 }
 
 @media(max-width:496px) {
