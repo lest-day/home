@@ -238,7 +238,7 @@ hr {
     .site-my,
     .site-often {
         display: grid;
-        grid-template-columns: 50%
+        grid-template-columns: 85%
     }
 }
 
@@ -255,9 +255,6 @@ hr {
     .meta-img,
     .other-img {
         width: 1.5vh
-    }
-    .time-block {
-        height: 1.4rem;
     }
 }
 
