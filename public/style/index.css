@@ -111,7 +111,7 @@ hr {
 
 .site-bookmark-title {
     display: inline;
-    font-size: 120%
+    font-size: 112%
 }
 
 .site-bookmark-description,
@@ -238,7 +238,7 @@ hr {
     .site-my,
     .site-often {
         display: grid;
-        grid-template-columns: 50% 50%
+        grid-template-columns: 50%
     }
 }
 
