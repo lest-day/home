@@ -254,7 +254,8 @@ hr {
 
     .meta-img,
     .other-img {
-        width: 1.5vh
+        width: 1.5vh;
+        height: 1.5vh
     }
 }
 
