@@ -238,7 +238,7 @@ hr {
     .site-my,
     .site-often {
         display: grid;
-        grid-template-columns: 85%
+        grid-template-columns: 95%;
     }
 }
 
