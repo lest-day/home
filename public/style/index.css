@@ -211,9 +211,9 @@ hr {
         display: grid;
         margin: auto;
         width: 100%;
-        grid-template-columns: 82% 23%;
+        grid-template-columns: 85% 20%;
         grid-gap: 0;
-        grid-template-areas: "infoblock   metablock  " "infoblock   timeblock  " "sayingblock   other      " "siteblock   siteblock  ";
+        grid-template-areas: "infoblock   metablock" "infoblock   timeblock" "infoblock   other" "sayingblock sayingblock    " "siteblock   siteblock";
     }
 
     .setting {
