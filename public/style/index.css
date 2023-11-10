@@ -1,7 +1,6 @@
 body {
-    background: url(https://t.mwm.moe/fj) #000;
+    background: url(https://t.mwm.moe/fj) #000 no-repeat;
     word-wrap: break-word;
-    unicode-bidi: isolate;
 }
 
 .block {
@@ -208,6 +207,10 @@ hr {
 }
 
 @media(max-width:496px) {
+    body {
+        background-size: cover; 
+    }
+    
     .content-wrap {
         display: grid;
         margin: auto;
