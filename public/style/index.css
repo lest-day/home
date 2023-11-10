@@ -52,7 +52,7 @@ hr {
 .content-wrap {
     display: grid;
     margin: auto;
-    width: 80%;
+    width: 75%;
     grid-template-columns: 34% 32% 26% 8%;
     grid-gap: 2px;
     grid-template-areas: "infoblock timeblock sayingblock other    " "infoblock siteblock siteblock   siteblock" "metablock siteblock siteblock   siteblock"
@@ -113,7 +113,6 @@ hr {
     display: inline;
     font-size: 120%;
     font-weight: 500;
-    font-size: 110%;
 }
 
 .site-bookmark-description,
@@ -253,7 +252,11 @@ hr {
     .site-my {
         grid-template-columns: 50% 50%;
     }
-    
+
+    .site-bookmark-text {
+        display: inline-block;
+    }
+
     .site-often {
         grid-template-columns: 100%;
     }
