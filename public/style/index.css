@@ -238,6 +238,7 @@ hr {
         justify-content: center;
         align-items: center;
         height: 10.8vh;
+        padding: 10px 0 10px 0;
     }
 
     .time-block .data,
