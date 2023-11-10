@@ -128,12 +128,12 @@ hr {
 }
 
 .site-bookmark-text {
-    display: inline-block;
+    display: inline;
 }
 
 .site-icon {
-    width: 2.4em;
-    height: 2.4em;
+    width: 1.2em;
+    height: 1.2em;
 }
 
 .infoblock-main {
@@ -250,7 +250,10 @@ hr {
         display: block
     }
 
-    .site-my,
+    .site-my {
+        grid-template-columns: 50% 50%;
+    }
+    
     .site-often {
         grid-template-columns: 100%;
     }
