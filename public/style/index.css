@@ -111,12 +111,13 @@ hr {
 
 .site-bookmark-title {
     display: inline;
-    font-size: 120%
+    font-size: 120%;
+    font-weight: 500;
 }
 
 .site-bookmark-description,
 .site-bookmark-title {
-    color: hsla(0, 0%, 100%, .9)
+    color: hsla(0, 0%, 100%, .9);
 }
 
 .site-my,
@@ -125,9 +126,13 @@ hr {
     grid-template-columns: 25% 25% 25% 25%
 }
 
+.site-bookmark-text {
+    display: inline-block;
+}
+
 .site-icon {
-    width: 1.4em;
-    height: 1.4em
+    width: 2.4em;
+    height: 2.4em;
 }
 
 .infoblock-main {
@@ -208,7 +213,15 @@ hr {
         width: 100%;
         grid-template-columns: 82% 23%;
         grid-gap: 0;
-        grid-template-areas: "infoblock   metablock  " "infoblock   timeblock" "infoblock   other      " "sayingblock sayingblock" "siteblock   siteblock  "
+        grid-template-areas: "infoblock   metablock  " "infoblock   timeblock  " "sayingblock   other      " "siteblock   siteblock  ";
+    }
+
+    .setting {
+        display: grid;
+        margin: auto;
+        width: 100%;
+        grid-template-columns: 100%;
+        grid-gap: 0;
     }
 
     .account-img,
@@ -222,7 +235,8 @@ hr {
         writing-mode: tb;
         display: flex;
         justify-content: center;
-        align-items: center
+        align-items: center;
+        height: 7.8vh;
     }
 
     .time-block .data,
@@ -237,8 +251,15 @@ hr {
 
     .site-my,
     .site-often {
-        display: grid;
-        grid-template-columns: 50% 50%
+        grid-template-columns: 100%;
+    }
+
+    .site-icon {
+        width: 3em;
+        height: 3em;
+        border-right: 1.2px solid hsla(0, 0%, 100%, .9);
+        margin-right: 8px;
+        padding-right: 4px;
     }
 }
 
@@ -254,21 +275,10 @@ hr {
 
     .meta-img,
     .other-img {
-        width: 1.5vh
+        width: 1.5vh;
+        height: 1.5vh
     }
-}
 
-@media(max-width:496px) {
-    .setting {
-        display: grid;
-        margin: auto;
-        width: 100%;
-        grid-template-columns: 100%;
-        grid-gap: 0;
-    }
-}
-
-@media(min-width:496px) and (max-width:875px) {
     .setting {
         display: grid;
         margin: auto;
