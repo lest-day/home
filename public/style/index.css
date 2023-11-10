@@ -212,7 +212,7 @@ hr {
         display: grid;
         margin: auto;
         width: 100%;
-        grid-template-columns: 82% 20%;
+        grid-template-columns: 82% 23%;
         grid-gap: 0;
         grid-template-areas: "infoblock   metablock" "infoblock   timeblock" "infoblock   other" "sayingblock sayingblock    " "siteblock   siteblock";
     }
