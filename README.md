@@ -1,2 +1,2 @@
-# lest-day.github.io
+# 主页
 lest-day的个人主页
