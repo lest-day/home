@@ -1,6 +1,7 @@
 body {
     background: url(https://t.mwm.moe/fj) #000 no-repeat;
     word-wrap: break-word;
+    background-position: revert;
 }
 
 .block {
@@ -52,7 +53,7 @@ hr {
 .content-wrap {
     display: grid;
     margin: auto;
-    width: 75%;
+    width: 78%;
     grid-template-columns: 34% 32% 26% 8%;
     grid-gap: 2px;
     grid-template-areas: "infoblock timeblock sayingblock other    " "infoblock siteblock siteblock   siteblock" "metablock siteblock siteblock   siteblock"
@@ -109,10 +110,12 @@ hr {
     text-decoration: none
 }
 
+.site-bookmark-description {
+    font-size: 110%;
+}
+
 .site-bookmark-title {
-    display: inline;
-    font-size: 120%;
-    font-weight: 500;
+    font-size: 125%;
 }
 
 .site-bookmark-description,
@@ -133,6 +136,7 @@ hr {
 .site-icon {
     width: 1.2em;
     height: 1.2em;
+    display: none;
 }
 
 .infoblock-main {
@@ -208,9 +212,10 @@ hr {
 
 @media(max-width:496px) {
     body {
-        background-size: cover; 
+        background-size: cover;
+        background-position: center;
     }
-    
+
     .content-wrap {
         display: grid;
         margin: auto;
@@ -272,6 +277,7 @@ hr {
         border-right: 1.2px solid hsla(0, 0%, 100%, .9);
         margin-right: 8px;
         padding-right: 4px;
+        display: inline-block;
     }
 }
 
