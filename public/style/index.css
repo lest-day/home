@@ -13,11 +13,13 @@ body {
     -webkit-box-shadow: hsla(0, 0%, 55.7%, .19) 0 6px 15px 0;
     color: hsla(0, 0%, 100%, .9);
     backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px)
+    -webkit-backdrop-filter: blur(5px);
+    background-color: rgba(73, 73, 73, 0.76);
 }
 
 .bg-black {
-    background-color: rgba(43, 43, 43, .945)
+    background-color: rgba(28, 28, 28, 0.76);
+    backdrop-filter: brightness(0.4);
 }
 
 .setting-block {
@@ -72,7 +74,7 @@ hr {
 
 .meta-block {
     text-align: center;
-    grid-area: metablock
+    grid-area: metablock;
 }
 
 .time-block {
