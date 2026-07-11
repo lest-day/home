@@ -1,4 +1,4 @@
-name: Build and push dist to gh-pages
+name: Build and deploy to gh-pages
 
 on:
   push:
@@ -14,21 +14,23 @@ jobs:
     concurrency:
       group: build-gh-pages
       cancel-in-progress: true
+
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: npm
+          node-version: '22'
+          cache: 'npm'
 
       - run: npm ci
-      - run: npm run build
 
-      - name: Deploy dist to gh-pages branch
+      - run: npx nuxt generate
+
+      - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: ./dist
+          publish_dir: ./.output/public
           force_orphan: true
