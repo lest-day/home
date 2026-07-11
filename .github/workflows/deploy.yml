@@ -17,13 +17,29 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
           cache: 'npm'
 
+      - uses: actions/cache@v4
+        with:
+          path: |
+            .nuxt
+            .output
+          key: ${{ runner.os }}-nuxt-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nuxt-
+
       - run: npm ci
+
+      - name: Copy CNAME from repository root
+        run: |
+          cp CNAME ./public/CNAME
+          echo "[√] CNAME copied"
 
       - run: npx nuxt generate
 
@@ -34,3 +50,4 @@ jobs:
           publish_branch: gh-pages
           publish_dir: ./.output/public
           force_orphan: true
+          enable_jekyll: false
