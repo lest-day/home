@@ -4,7 +4,7 @@ export default defineNuxtConfig({
     head: {
       script: [
         {
-          src: 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/js/all.min.js',
+          src: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js',
           defer: true,
         },
       ],
