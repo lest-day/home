@@ -178,7 +178,7 @@ const socials = [
       <footer class="text-center text-xs text-zinc-400">
         © {{ new Date().getFullYear() }} lest-day 的个人主页 |
         <a
-          href="https://uptime.lestday233.eu.org/"
+          href="https://uptime.lestday233.eu.org/status/lestday233"
           target="_blank"
           rel="noopener noreferrer"
           class="hover:text-zinc-300 transition-colors"
